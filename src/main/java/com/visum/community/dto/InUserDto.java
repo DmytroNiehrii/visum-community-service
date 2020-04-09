@@ -13,4 +13,5 @@ public class InUserDto {
 
     private String firstName;
     private String lastName;
+    private String phone;
 }

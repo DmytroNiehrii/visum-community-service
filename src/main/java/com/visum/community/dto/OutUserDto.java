@@ -19,4 +19,5 @@ public class OutUserDto {
     private Timestamp lastUpdateAt;
     private String firstName;
     private String lastName;
+    private String phone;
 }

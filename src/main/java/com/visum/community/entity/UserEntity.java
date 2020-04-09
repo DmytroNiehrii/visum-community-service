@@ -33,6 +33,7 @@ public class UserEntity {
     private Timestamp lastUpdateAt;
     private String firstName;
     private String lastName;
+    private String phone;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
     private List<CommunityMemberEntity> members;
 }

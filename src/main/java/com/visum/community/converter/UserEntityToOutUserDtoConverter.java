@@ -17,6 +17,7 @@ public class UserEntityToOutUserDtoConverter implements Converter<UserEntity, Ou
             .lastUpdateAt(entity.getLastUpdateAt())
             .firstName(entity.getFirstName())
             .lastName(entity.getLastName())
+            .phone(entity.getPhone())
             .build();
     }
 }

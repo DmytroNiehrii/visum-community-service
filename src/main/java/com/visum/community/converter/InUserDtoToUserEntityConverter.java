@@ -17,6 +17,7 @@ public class InUserDtoToUserEntityConverter implements Converter<InUserDto, User
             .createdAt(new Timestamp(System.currentTimeMillis()))
             .firstName(dto.getFirstName())
             .lastName(dto.getLastName())
+            .phone(dto.getPhone())
             .build();
     }
 }
