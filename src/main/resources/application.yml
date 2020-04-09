@@ -1,0 +1,27 @@
+app:
+  id: ${random.uuid}
+spring:
+  application:
+    name: community-service
+  jpa:
+    show_sql: false
+    database: MYSQL
+    generate-ddl: true
+    properties:
+      hibernate:
+        current_session_context_class: thread
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: false
+        use_sql_comments: true
+        format_sql: true
+  main.allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:mysql}:${MYSQL_PORT:3306}/community_service?createDatabaseIfNotExist=true
+    username: root
+    password: rootpw
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+management.endpoints.web.exposure.include: "*"

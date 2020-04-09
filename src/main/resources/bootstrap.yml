@@ -1,0 +1,7 @@
+server.port: ${APP_PORT:8080}
+spring:
+  application.name: community-service
+  cloud:
+    enabled: true
+
+eureka.instance.instance-id: ${spring.application.name}:${server.port}:${spring.application.instance_id:${random.value}}
