@@ -4,11 +4,14 @@ import com.visum.community.dto.InAddCommunityMemberDto;
 import com.visum.community.dto.InCommunityDto;
 import com.visum.community.entity.CommunityEntity;
 import com.visum.community.entity.CommunityMemberEntity;
+import com.visum.community.entity.UserEntity;
 import com.visum.community.repository.CommunityEntityRepository;
 import com.visum.community.repository.CommunityMemberEntityRepository;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,10 @@ public class CommunityService {
     private ConversionService conversionService;
     @Autowired
     private CommunityMemberEntityRepository communityMemberEntityRepository;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private EntityManager entityManager;
 
     @Transactional
     public CommunityEntity save(InCommunityDto dto) {
@@ -71,5 +78,13 @@ public class CommunityService {
     @Transactional
     public CommunityEntity addCommunityMember(InAddCommunityMemberDto dto) {
         return communityMemberEntityRepository.save(conversionService.convert(dto, CommunityMemberEntity.class)).getCommunity();
+    }
+
+    @Transactional
+    public CommunityEntity removeUserFromCommunity(Long communityId, Long userId) {
+        CommunityEntity communityEntity = findById(communityId);
+        UserEntity userEntity = userService.findById(userId);
+        communityMemberEntityRepository.deleteByCommunityAndUser(communityEntity, userEntity);
+        return communityEntity;
     }
 }

@@ -66,4 +66,10 @@ public class CommunityController {
     public ResponseEntity<OutCommunityDto> addCommunityMember(@RequestBody InAddCommunityMemberDto dto) {
         return new ResponseEntity(conversionService.convert(communityService.addCommunityMember(dto), OutCommunityDto.class), HttpStatus.OK);
     }
+
+    @DeleteMapping("/member/{communityId}/{userId}")
+    public ResponseEntity<OutCommunityDto> removeUserFromCommunity(@PathVariable Long communityId, @PathVariable Long userId) {
+        communityService.removeUserFromCommunity(communityId, userId);
+        return new ResponseEntity(conversionService.convert(communityService.removeUserFromCommunity(communityId, userId), OutCommunityDto.class), HttpStatus.OK);
+    }
 }

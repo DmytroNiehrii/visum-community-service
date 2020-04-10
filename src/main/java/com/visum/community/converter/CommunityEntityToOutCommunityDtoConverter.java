@@ -3,6 +3,7 @@ package com.visum.community.converter;
 import com.visum.community.dto.OutCommunityDto;
 import com.visum.community.dto.OutCommunityMemberDto;
 import com.visum.community.entity.CommunityEntity;
+import java.util.Collections;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -25,7 +26,7 @@ public class CommunityEntityToOutCommunityDtoConverter implements Converter<Comm
             .lastUpdateAt(entity.getLastUpdateAt())
             .name(entity.getName())
             .description(entity.getDescription())
-            .members(entity.getMembers().stream()
+            .members(entity.getMembers() == null ? Collections.EMPTY_LIST : entity.getMembers().stream()
                 .map(communityMemberEntity -> conversionService.convert(communityMemberEntity, OutCommunityMemberDto.class))
                 .collect(Collectors.toList())
             )
