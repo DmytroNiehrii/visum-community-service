@@ -24,4 +24,12 @@ spring:
       max-file-size: 20MB
       max-request-size: 20MB
 
+eureka:
+  instance.prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:eureka}:${EUREKA_PORT:8761}/eureka/
+
 management.endpoints.web.exposure.include: "*"

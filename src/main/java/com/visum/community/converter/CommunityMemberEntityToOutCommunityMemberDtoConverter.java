@@ -1,7 +1,7 @@
 package com.visum.community.converter;
 
-import com.visum.community.dto.OutCommunityMemberDto;
-import com.visum.community.dto.OutUserDto;
+import com.visum.common.community.dto.OutCommunityMemberDto;
+import com.visum.common.community.dto.OutUserDto;
 import com.visum.community.entity.CommunityMemberEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

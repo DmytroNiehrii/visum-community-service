@@ -1,6 +1,6 @@
 package com.visum.community.converter;
 
-import com.visum.community.dto.OutUserDto;
+import com.visum.common.community.dto.OutUserDto;
 import com.visum.community.entity.UserEntity;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package com.visum.community.service;
 
-import com.visum.community.dto.InAddCommunityMemberDto;
-import com.visum.community.dto.InCommunityDto;
+import com.visum.common.community.dto.InAddCommunityMemberDto;
+import com.visum.common.community.dto.InCommunityDto;
 import com.visum.community.entity.CommunityEntity;
 import com.visum.community.entity.CommunityMemberEntity;
 import com.visum.community.entity.UserEntity;

@@ -1,6 +1,6 @@
 package com.visum.community.service;
 
-import com.visum.community.dto.InUserDto;
+import com.visum.common.community.dto.InUserDto;
 import com.visum.community.entity.UserEntity;
 import com.visum.community.repository.UserEntityRepository;
 import java.sql.Timestamp;

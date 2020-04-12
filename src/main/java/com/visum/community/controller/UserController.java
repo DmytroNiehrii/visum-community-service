@@ -1,7 +1,7 @@
 package com.visum.community.controller;
 
-import com.visum.community.dto.InUserDto;
-import com.visum.community.dto.OutUserDto;
+import com.visum.common.community.dto.InUserDto;
+import com.visum.common.community.dto.OutUserDto;
 import com.visum.community.entity.UserEntity;
 import com.visum.community.service.UserService;
 import java.util.UUID;

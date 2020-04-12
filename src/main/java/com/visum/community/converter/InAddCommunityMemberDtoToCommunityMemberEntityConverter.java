@@ -1,6 +1,6 @@
 package com.visum.community.converter;
 
-import com.visum.community.dto.InAddCommunityMemberDto;
+import com.visum.common.community.dto.InAddCommunityMemberDto;
 import com.visum.community.entity.CommunityMemberEntity;
 import com.visum.community.service.CommunityService;
 import com.visum.community.service.UserService;

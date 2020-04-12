@@ -1,8 +1,9 @@
 package com.visum.community.controller;
 
-import com.visum.community.dto.InAddCommunityMemberDto;
-import com.visum.community.dto.InCommunityDto;
-import com.visum.community.dto.OutCommunityDto;
+import com.visum.common.community.dto.InAddCommunityMemberDto;
+import com.visum.common.community.dto.InCommunityDto;
+import com.visum.common.community.dto.OutCommunityDto;
+import com.visum.common.community.dto.OutCommunityShortDto;
 import com.visum.community.entity.CommunityEntity;
 import com.visum.community.service.CommunityService;
 import java.util.UUID;
@@ -36,9 +37,9 @@ public class CommunityController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<OutCommunityDto>> findAll(Pageable pageable) {
+    public ResponseEntity<Page<OutCommunityShortDto>> findAll(Pageable pageable) {
         return new ResponseEntity(communityService.findAll(pageable)
-            .map(source -> conversionService.convert(source, OutCommunityDto.class)), HttpStatus.OK);
+            .map(source -> conversionService.convert(source, OutCommunityShortDto.class)), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -58,7 +59,7 @@ public class CommunityController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CommunityEntity> update(@PathVariable Long id, @RequestBody InCommunityDto dto) {
+    public ResponseEntity<OutCommunityDto> update(@PathVariable Long id, @RequestBody InCommunityDto dto) {
         return new ResponseEntity(conversionService.convert(communityService.update(id, dto), OutCommunityDto.class), HttpStatus.OK);
     }
 

@@ -1,7 +1,7 @@
 package com.visum.community.converter;
 
-import com.visum.community.dto.OutCommunityDto;
-import com.visum.community.dto.OutCommunityMemberDto;
+import com.visum.common.community.dto.OutCommunityDto;
+import com.visum.common.community.dto.OutCommunityMemberDto;
 import com.visum.community.entity.CommunityEntity;
 import java.util.Collections;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
 package com.visum.community.converter;
 
-import com.visum.community.dto.InUserDto;
+import com.visum.common.community.dto.InUserDto;
 import com.visum.community.entity.UserEntity;
 import java.sql.Timestamp;
 import java.util.UUID;
